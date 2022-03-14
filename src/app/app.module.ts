@@ -1,16 +1,42 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {RouterModule,Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { AuthGuard } from './auth.guard';
+import { AddProductComponent } from './add-product/add-product.component';
+const routes:Routes=[
+  {path :'',component:HomeComponent,canActivate:[AuthGuard]},
+  {path :'login',component:LoginComponent},
+  {path :'register',component:RegisterComponent},
+  {path:'add',component:AddProductComponent}
+]
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    HeaderComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
