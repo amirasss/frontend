@@ -32,32 +32,32 @@
               <h2 class="tm-block-title d-inline-block">Add Drug for donation</h2>
             </div>
           </div>
-          <form action="" class="tm-edit-product-form" (ngSubmit)="insertData()" >
+          <form action="" class="tm-edit-product-form">
             <div class="row tm-edit-product-row">
               <div class="col-xl-6 col-lg-6 col-md-12">
                 <div class="form-group mb-3">
                   <label for="name">Drug Name_En
                   </label>
-                  <input id="name" name="name_en" type="text" class="form-control validate" required [(ngModel)]="post.name_en"  />
+                  <input id="name" name="name_en" type="text" class="form-control validate" />
                 </div>
                 <div class="form-group mb-3">
                   <label for="name">Drug Name_AR
                   </label>
-                  <input id="name" name="name_ar" type="text" class="form-control validate" required required [(ngModel)]="post.name_ar"  />
+                  <input id="name" name="name_ar" type="text" class="form-control validate" />
                 </div>
                 <div class="form-group mb-3">
                   <label for="description">Description</label>
-                  <textarea class="form-control validate" rows="2" required required [(ngModel)]="post.desc" name="desc"    #message='ngModel'></textarea>
+                  <textarea class="form-control validate" rows="2"></textarea>
                 </div>
                 <div class="form-group mb-3">
                   <label for="address">Address
                   </label>
-                  <input id="address" name="address" type="text" class="form-control validate" required required [(ngModel)]="post.address"  />
+                  <input id="address" name="address" type="text" class="form-control validate" />
                 </div>
                 <div class="form-group mb-3">
                   <label for="phone">Phone Number
                   </label>
-                  <input id="phone" name="phone" type="text" class="form-control validate" required required [(ngModel)]="post.phone"  />
+                  <input id="phone" name="phone" type="text" class="form-control validate" />
                 </div>
 
               </div>
@@ -69,14 +69,14 @@
                 <div class="custom-file mt-3 mb-3">
                   <input id="fileInput" type="file" style="display:none;">
                   <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE"
-                    onclick="document.getElementById('fileInput').click();" required [(ngModel)]="post.img"/>
+                    />
                 </div>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-block text-uppercase" >Add Product Now</button>
+                <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Product Now</button>
 
               </div>
-              </div>
+            </div>
           </form>
         </div>
       </div>
@@ -98,12 +98,7 @@
   <!-- https://jqueryui.com/download/ -->
   <script src="/assets/js/bootstrap.min.js"></script>
   <!-- https://getbootstrap.com/ -->
-  <script>
-    $(function () {
-      $("#expire_date").datepicker();
-    });
 
-  </script>
 </body>
 
 </html>
