@@ -1,5 +1,6 @@
 import { NgForOf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DonationService } from '../service/donation.service';
 
 @Component({
@@ -10,8 +11,8 @@ import { DonationService } from '../service/donation.service';
 export class HomeComponent implements OnInit {
   posts:any;
   Object = Object;
-
-  constructor(private donation:DonationService) { }
+  url='http://127.0.0.1:8000/';
+  constructor(private donation:DonationService,private router:Router) { }
 
   ngOnInit(): void {
     this.getAllDonation();
@@ -19,8 +20,14 @@ export class HomeComponent implements OnInit {
   getAllDonation(){
     this.donation.getData().subscribe(res=>{
       this.posts= res;
-      
     });
+  }
+  deleteData(id:any){
+    console.log(id);
+    this.donation.deletePost(id).subscribe(res=>{
+      this.getAllDonation();
+    });
+
   }
 
 }

@@ -13,11 +13,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './auth.guard';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ShowDonationComponent } from './show-donation/show-donation.component';
+import { ProfileComponent } from './profile/profile.component';
+import { DeleteComponent } from './delete/delete.component';
+import { UpdateComponent } from './update/update.component';
 const routes:Routes=[
   {path :'',component:HomeComponent,canActivate:[AuthGuard]},
   {path :'login',component:LoginComponent},
   {path :'register',component:RegisterComponent},
-  {path:'add',component:AddProductComponent}
+  {path:'add',component:AddProductComponent},
+  {path:'show/:id',component:ShowDonationComponent},
+  {path:'profile',component:ProfileComponent},
+  {path:'delete',component:DeleteComponent},
+  {path:'edit/:id',component:UpdateComponent},
+
+
 ]
 @NgModule({
   declarations: [
@@ -27,6 +37,10 @@ const routes:Routes=[
     HomeComponent,
     HeaderComponent,
     AddProductComponent,
+    ShowDonationComponent,
+    ProfileComponent,
+    DeleteComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,

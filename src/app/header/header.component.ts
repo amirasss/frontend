@@ -18,8 +18,6 @@ export class HeaderComponent implements OnInit {
     this.token=localStorage.getItem('token');
     this.useData=jwt_decode(this.token);
     this.email=this.useData.email;
-    this.name=sessionStorage.getItem('hello');
-    console.log(this.token);
     console.log(this.useData.email);
   }
   logout(){

@@ -32,71 +32,46 @@
               <h2 class="tm-block-title d-inline-block">Add Drug for donation</h2>
             </div>
           </div>
-          <form class="tm-edit-product-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+          <form class="tm-edit-product-form" (ngSubmit)="updatePost()">
             <div class="row tm-edit-product-row">
               <div class="col-xl-6 col-lg-6 col-md-12">
                 <div class="form-group mb-3">
                   <label for="name">Drug Name_En
                   </label>
-                  <input id="name" name="name_en" type="text" class="form-control validate" formControlName="name_en"
-                    [ngClass]="{'is-invalid':submitted && f['name_en'].errors}">
-                    <div *ngIf="submitted && f['name_en'].errors" class="invalid-feedback">
-                      <div *ngIf="f['name_en'].errors['required']">Name_EN is required</div>
-                    </div>
+                  <input id="name" name="name_en" type="text" class="form-control validate" value="{{ this.data[0].name_en }}">
                 </div>
                 <div class="form-group mb-3">
                   <label for="name">Drug Name_AR
                   </label>
-                  <input id="name" name="name_ar" type="text" class="form-control validate" formControlName="name_ar"
-                  [ngClass]="{'is-invalid':submitted && f['name_ar'].errors}"/>
-                  <div *ngIf="submitted && f['name_ar'].errors" class="invalid-feedback">
-                    <div *ngIf="f['name_ar'].errors['required']">Name_AR is required</div>
-                  </div>
+                  <input id="name" name="name_ar" type="text" class="form-control validate" value="{{ this.data[0].name_ar }}">
                 </div>
                 <div class="form-group mb-3">
                   <label for="description">Description</label>
-                  <textarea class="form-control validate" rows="2" formControlName="desc"
-                  [ngClass]="{'is-invalid':submitted && f['desc'].errors}"></textarea>
-                  <div *ngIf="submitted && f['desc'].errors" class="invalid-feedback">
-                    <div *ngIf="f['desc'].errors['required']">Describtion is required</div>
-                  </div>
+                  <textarea class="form-control validate" rows="2"  value="{{ this.data[0].desc }}"></textarea>
                 </div>
                 <div class="form-group mb-3">
                   <label for="address">Address
                   </label>
-                  <input id="address" name="address" type="text" class="form-control validate" formControlName="address"
-                  [ngClass]="{'is-invalid':submitted && f['address'].errors}"/>
-                  <div *ngIf="submitted && f['address'].errors" class="invalid-feedback">
-                    <div *ngIf="f['address'].errors['required']">Address is required</div>
-                  </div>
+                  <input id="address" name="address" type="text" class="form-control validate" value="{{ this.data[0].name_en }}">
                 </div>
                 <div class="form-group mb-3">
                   <label for="phone">Phone Number
                   </label>
-                  <input id="phone" name="phone" type="text" class="form-control validate" formControlName="phone"
-                  [ngClass]="{'is-invalid':submitted && f['phone'].errors}"/>
-                  <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
-                    <div *ngIf="f['phone'].errors['required']">Phone is required</div>
-                  </div>
+                  <input id="phone" name="phone" type="text" class="form-control validate" value="{{ this.data[0].name_en }}">
                 </div>
 
               </div>
               <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
-                <div class="tm-product-img-dummy mx-auto">
-                  <i class="fas fa-cloud-upload-alt tm-upload-icon"
-                    onclick="document.getElementById('fileInput').click();"></i>
+                <div class="tm-product-img-edit mx-auto">
+                  <img src="{{ url }}{{ this.data[0].img }}" alt="Product image" class="img-fluid d-block mx-auto">
+
                 </div>
                 <div class="custom-file mt-3 mb-3">
-                  <input id="fileInput" type="file" style="display:none;" formControlName="img"
-                  [ngClass]="{'is-invalid':submitted && f['img'].errors}"  (change)="uploadImage($event)"/>
-                  <div *ngIf="submitted && f['img'].errors" class="invalid-feedback">
-                    <div *ngIf="f['img'].errors['required']">Image is required</div>
-                  </div>
-                  <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE" />
+                  <input type="file" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE" />
                 </div>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Product Now</button>
+                <button type="submit" class="btn btn-primary btn-block text-uppercase">Update</button>
 
               </div>
             </div>
