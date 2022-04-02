@@ -268,7 +268,7 @@
           Password must be at least 6 character
         </div>
       </div>
-      <label for="uconfirmPassword">Password</label><br>
+      <label for="uconfirmPassword">Confirm Password</label><br>
       <input type="password" name="confirmPassword" id="uconfirmPassword" formControlName="confirmPassword" [ngClass]="{'is-invalid':submitted && f['confirmPassword'].errors}" placeholder="Enter Password" class="input-box"><br>
       <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
         <div *ngIf="f['confirmPassword'].errors['required']">

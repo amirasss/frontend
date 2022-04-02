@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group mb-3">
                   <label for="description">Description</label>
-                  <textarea class="form-control validate" rows="2" formControlName="desc"
+                  <textarea class="form-control validate" rows="4" formControlName="desc"
                   [ngClass]="{'is-invalid':submitted && f['desc'].errors}"></textarea>
                   <div *ngIf="submitted && f['desc'].errors" class="invalid-feedback">
                     <div *ngIf="f['desc'].errors['required']">Describtion is required</div>
@@ -92,7 +92,6 @@
                   <div *ngIf="submitted && f['img'].errors" class="invalid-feedback">
                     <div *ngIf="f['img'].errors['required']">Image is required</div>
                   </div>
-                  <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE" />
                 </div>
               </div>
               <div class="col-12">

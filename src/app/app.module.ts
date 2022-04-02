@@ -23,9 +23,9 @@ const routes:Routes=[
   {path :'register',component:RegisterComponent},
   {path:'add',component:AddProductComponent},
   {path:'show/:id',component:ShowDonationComponent},
-  {path:'profile',component:ProfileComponent},
+  // {path:'profile',component:ProfileComponent},
   {path:'delete',component:DeleteComponent},
-  {path:'edit/:id',component:UpdateComponent},
+  // {path:'edit/:id',component:UpdateComponent},
 
 
 ]
